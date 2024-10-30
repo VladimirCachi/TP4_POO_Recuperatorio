@@ -1,27 +1,42 @@
 package ar.edu.unju.escmi.tp4.dominio;
 
 public abstract class Inmueble {
-    protected static String codigo; // Código único del inmueble
-    protected boolean disponible; // Indica si el inmueble está disponible o no
-    protected float precio;
+	
+	protected int id;
+	protected double precio;
+	protected boolean disponibilidad;
+	
+	public Inmueble(int id, double precio, boolean disponibilidad) {
+		this.id = id;
+		this.precio = precio;
+		this.disponibilidad = disponibilidad;
+	}
+	
+	public int getId() {
+		return id;
+	}
 
-    public Inmueble(String codigo, float precio, boolean disponible) {
-        Inmueble.codigo = codigo;
-        this.precio = precio;
-        this.disponible = disponible;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public static String getCodigo() {
-        return codigo;
-    }
-    
-	public boolean isDisponible() {
-        return disponible;
-    }
+	public double getPrecio() {
+		return precio;
+	}
 
-    public void setDisponible(boolean disponible) {
-        this.disponible = disponible;
-    }
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
 
-    public abstract void mostrarDatos();
+	public boolean getDisponibilidad() {
+		return disponibilidad;
+	}
+
+	public void setDisponibilidad(boolean disponibilidad) {
+		this.disponibilidad = disponibilidad;
+	}
+
+	public abstract void mostrarDatos();
+	
 }
+

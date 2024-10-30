@@ -1,21 +1,43 @@
 package ar.edu.unju.escmi.tp4.dominio;
 
-public class Vivienda extends Inmueble {
-    private String direccion;
-    private int habitaciones;
+public class Vivienda extends Inmueble{
 
-    public Vivienda(String codigo, boolean disponible, String direccion, int habitaciones, float precio) {
-        super(codigo, precio, disponible);
-        this.direccion = direccion;
-        this.habitaciones = habitaciones;
-    }
+	private String direccion;
+	private int cantidadHabitaciones;
+	
+	
+	public Vivienda(int id, double precio, boolean disponibilidad, String direccion, int cantidadHabitaciones) {
+		super(id, precio, disponibilidad);
+		this.direccion = direccion;
+		this.cantidadHabitaciones = cantidadHabitaciones;
+	}
 
-    @Override
-    public void mostrarDatos() {
-        System.out.println("Vivienda [Código: " + codigo + ", Dirección: " + direccion + ", Habitaciones: " + habitaciones + ", Alquiler: $" + precio + "]");
-    }
+	public String getDireccion() {
+		return direccion;
+	}
 
-    public float getPrecio() {
-        return precio;
-    }
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public int getCantidadHabitaciones() {
+		return cantidadHabitaciones;
+	}
+
+	public void setCantidadHabitaciones(int cantidadHabitaciones) {
+		this.cantidadHabitaciones = cantidadHabitaciones;
+	}
+
+	@Override
+	public void mostrarDatos() {
+		// TODO Auto-generated method stub
+		System.out.println("\nID: " + id);
+        System.out.println("Disponibilidad: " + disponibilidad);
+        System.out.println("Dirección: " + direccion);
+        System.out.println("Cantidad de Habitaciones: " + cantidadHabitaciones);
+        System.out.println("Precio de Alquiler Diario: " + precio);
+
+	}
+
 }
